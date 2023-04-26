@@ -2,15 +2,31 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="./longtext.js"></script>    
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+      <a-assets>
+        <img id="stars" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Milky_Way_360_equirectangular_rendering_with_foreground_stars_removed.png"/>
+      </a-assets>
+      <a-entity position="0 0 -1" align="center" rotation="-63 0 0">
+        <a-text animation="property: position; from: 0 0 0; to: 0 50 0; dur: 60000" 
+                sound="src: url(https://cdn.glitch.global/264e3e43-64ab-4f58-96da-71412739c1ce/rumble.mp3?v=1682443553839);"
+                wrapCount="10" longtext align="center" width="3" 
+                value="this is text from a time when things where a lot different" >
+          
+        </a-text>
+      </a-entity>
+
+      <a-sky radius="10000" color="#aad" src="#stars"></a-sky>
     </a-scene>
-    <a style="position: absolute; top: 10px; left 10px" href="https://www.oculus.com/open_url/?url=https://aframe-genisys.glitch.me">Open on Quest!</a>
+    
+    
+    <a
+      style="position: absolute; top: 10px; left: 10px; color: #fff"
+      href="https://www.oculus.com/open_url/?url=https://aframe-genisys.glitch.me"
+      >Open on Quest!</a
+    >
+    
   </body>
 </html>
